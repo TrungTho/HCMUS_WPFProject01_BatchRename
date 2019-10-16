@@ -1,0 +1,47 @@
+﻿<Window x:Class="Project01_BatchRename.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project01_BatchRename"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel
+        Orientation="Horizontal">
+        <StackPanel>
+            <TextBox Width="300" Height="200"
+                 Background="AliceBlue"
+                 Name="srcFileName"
+                 Margin="10"/>
+
+        </StackPanel>
+
+        <StackPanel>
+            <Button Width="80" Height="30" Margin="10" 
+                    Content="Replace!" FontWeight="Bold"
+                    Name="replaceFileNameButton"/>
+            <Button Width="80" Height="30" Margin="10" 
+                    Content="New Case!" FontWeight="Bold"
+                    Name="createNewCaseButton"/>
+            <Button Width="80" Height="30" Margin="10" 
+                    Content="Normalize!" FontWeight="Bold"
+                    Name="normalizeFileNameButton"/>
+            <Button Width="80" Height="30" Margin="10" 
+                    Content="Move!" FontWeight="Bold"
+                    Name="moveFileNameButton"/>
+            <Button Width="80" Height="30" Margin="10" 
+                    Content="Generate GUID!" FontWeight="Bold"
+                    Name="createGUIDNameButton"/>
+          
+        </StackPanel>
+
+        <StackPanel>
+            <TextBox Width="300" Height="200"
+                 Background="AliceBlue"
+                 Name="desFileName"
+                 Margin="10"/>
+
+        </StackPanel>
+
+    </StackPanel>
+</Window>
