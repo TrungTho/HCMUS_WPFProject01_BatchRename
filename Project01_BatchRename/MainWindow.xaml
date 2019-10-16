@@ -17,21 +17,22 @@
         </StackPanel>
 
         <StackPanel>
-            <Button Width="80" Height="30" Margin="10" 
+            <Button Width="100" Height="30" Margin="10" 
                     Content="Replace!" FontWeight="Bold"
                     Name="replaceFileNameButton"/>
-            <Button Width="80" Height="30" Margin="10" 
+            <Button Width="100" Height="30" Margin="10" 
                     Content="New Case!" FontWeight="Bold"
                     Name="createNewCaseButton"/>
-            <Button Width="80" Height="30" Margin="10" 
+            <Button Width="100" Height="30" Margin="10" 
                     Content="Normalize!" FontWeight="Bold"
                     Name="normalizeFileNameButton"/>
-            <Button Width="80" Height="30" Margin="10" 
+            <Button Width="100" Height="30" Margin="10" 
                     Content="Move!" FontWeight="Bold"
                     Name="moveFileNameButton"/>
-            <Button Width="80" Height="30" Margin="10" 
+            <Button Width="100" Height="30" Margin="10" 
                     Content="Generate GUID!" FontWeight="Bold"
-                    Name="createGUIDNameButton"/>
+                    Name="createGUIDNameButton"
+                    Click="CreateGUIDNameButton_Click"/>
           
         </StackPanel>
 

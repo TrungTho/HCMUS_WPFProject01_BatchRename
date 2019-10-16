@@ -43,5 +43,10 @@ namespace Project01_BatchRename
         {
             InitializeComponent();
         }
+
+        private void CreateGUIDNameButton_Click(object sender, RoutedEventArgs e)
+        {
+            desFileName.Text = Guid.NewGuid().ToString();
+        }
     }
 }
