@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GlobalConstants.cs" />
     <Compile Include="NewCaseOptions.xaml.cs">
       <DependentUpon>NewCaseOptions.xaml</DependentUpon>
     </Compile>

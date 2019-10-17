@@ -24,9 +24,37 @@ namespace Project01_BatchRename
             InitializeComponent();
         }
 
+        public delegate void BoxStateDelegate(int caseMode);
+        public event BoxStateDelegate BoxChecked = null;
+
         private void RadioUpperCase_Checked(object sender, RoutedEventArgs e)
         {
-            
+            BoxChecked?.Invoke(Global.upperCase);
         }
+
+        private void RadioLowerCase_Checked(object sender, RoutedEventArgs e)
+        {
+            BoxChecked?.Invoke(Global.lowerCase);
+        }
+
+        private void RadioSentenceCase_Checked(object sender, RoutedEventArgs e)
+        {
+            BoxChecked?.Invoke(Global.sentenceCase);
+        }
+
+
+        private void BtnOK_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.Close();
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
+        }
+
+
     }
 }

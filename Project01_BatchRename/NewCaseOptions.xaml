@@ -5,14 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project01_BatchRename"
         mc:Ignorable="d"
-        Title="New Case Options" Height="150" Width="200">
-    <Canvas>
-        <StackPanel Orientation="Vertical" Canvas.Top="10" Canvas.Left="10">
-            <RadioButton x:Name="radioUpperCase" Content="UPPERCASE" Canvas.Left="26" Canvas.Top="22" Checked="RadioUpperCase_Checked"/>
-            <RadioButton Content="RadioButton"/>
-            <RadioButton Content="RadioButton"/>
-
+        Title="New Case Options" Height="134" Width="220" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="NoResize">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" >
+            <RadioButton x:Name="radioUpperCase" Content="UPPERCASE" Margin="5,5,0,0" Checked="RadioUpperCase_Checked" GroupName="Options"/>
+            <RadioButton x:Name="radioLowerCase" Content="lowercase" Margin="5,5,0,0"  GroupName="Options" Checked="RadioLowerCase_Checked"/>
+            <RadioButton x:Name="radioSentenceCase" Content="Sentence case" Margin="5,5,0,0"  GroupName="Options" Checked="RadioSentenceCase_Checked"/>
         </StackPanel>
         
-    </Canvas>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center" >
+            <Button x:Name="btnOK" Content="OK" Width="75" Padding="1" IsDefault="True" Click="BtnOK_Click"/>
+            <Border Width="16"></Border>
+            <Button x:Name="btnCancel" Content="Cancel" Width="75" Padding="1" IsCancel="True" Click="BtnCancel_Click"/>
+        </StackPanel>
+        
+
+    </StackPanel>
 </Window>
