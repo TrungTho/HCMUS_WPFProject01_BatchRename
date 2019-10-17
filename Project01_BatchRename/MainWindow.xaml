@@ -5,21 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project01_BatchRename"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="800">
     <StackPanel
-        Orientation="Horizontal">
+        Orientation="Horizontal"
+        Background="GreenYellow">
         <StackPanel>
             <TextBox Width="300" Height="200"
+                 Text="JackandOggyhavesExoNYouTubeandNeTFlitxwithYOuTUbEKIDonYouTUBE"
                  Background="AliceBlue"
                  Name="srcFileName"
-                 Margin="10"/>
+                 Margin="10"
+                 TextWrapping="Wrap"/>
+            <StackPanel
+                Orientation="Horizontal" Margin="10">
+                <Label Content="oldPattern" Width="100"/>
+                <TextBox Name="txtPattern" Text="youtube" Width="100"/>
+            </StackPanel>
+
+            <StackPanel
+                Orientation="Horizontal" Margin="10">
+                <Label Content="new Pattern" Width="100"/>
+                <TextBox Name="txtNewPattern" Text="---replaced---" Width="100"/>
+            </StackPanel>
+
 
         </StackPanel>
 
         <StackPanel>
             <Button Width="100" Height="30" Margin="10" 
                     Content="Replace!" FontWeight="Bold"
-                    Name="replaceFileNameButton"/>
+                    Name="replaceFileNameButton"
+                    Click="ReplaceFileNameButton_Click"/>
             <Button Width="100" Height="30" Margin="10" 
                     Content="New Case!" FontWeight="Bold"
                     Name="createNewCaseButton"/>
@@ -40,7 +56,9 @@
             <TextBox Width="300" Height="200"
                  Background="AliceBlue"
                  Name="desFileName"
-                 Margin="10"/>
+                 Margin="10"
+                 Text="new file name appear here!!!"
+                 TextWrapping="Wrap"/>
 
         </StackPanel>
 

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -47,6 +49,28 @@ namespace Project01_BatchRename
         private void CreateGUIDNameButton_Click(object sender, RoutedEventArgs e)
         {
             desFileName.Text = Guid.NewGuid().ToString();
+        }
+
+        private void ReplaceFileNameButton_Click(object sender, RoutedEventArgs e)
+        {
+            string pattern = txtPattern.Text;
+            string src = srcFileName.Text;
+            string newPattern = txtNewPattern.Text;
+            string tmp = "";
+            RegexOptions options = RegexOptions.Multiline | RegexOptions.IgnoreCase;
+            var myBuilder = new StringBuilder();
+            int startPos = 0;
+
+            foreach (Match m in Regex.Matches(src,pattern,options))
+            {
+                tmp = src.Substring(startPos, m.Index-startPos);
+                myBuilder.Append(tmp+newPattern);
+                startPos = m.Index + m.Value.Length;
+            }
+            tmp = src.Substring(startPos);
+            myBuilder.Append(tmp);
+
+            desFileName.Text = myBuilder.ToString();
         }
     }
 }
