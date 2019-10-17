@@ -72,5 +72,10 @@ namespace Project01_BatchRename
 
             desFileName.Text = myBuilder.ToString();
         }
+
+        private void CreateNewCaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            var screen = new NewCaseOptions();
+        }
     }
 }

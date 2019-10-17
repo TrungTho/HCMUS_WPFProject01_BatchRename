@@ -38,7 +38,7 @@
                     Click="ReplaceFileNameButton_Click"/>
             <Button Width="100" Height="30" Margin="10" 
                     Content="New Case!" FontWeight="Bold"
-                    Name="createNewCaseButton"/>
+                    Name="createNewCaseButton" Click="CreateNewCaseButton_Click"/>
             <Button Width="100" Height="30" Margin="10" 
                     Content="Normalize!" FontWeight="Bold"
                     Name="normalizeFileNameButton"/>
