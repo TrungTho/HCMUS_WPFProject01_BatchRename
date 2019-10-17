@@ -92,7 +92,7 @@ namespace Project01_BatchRename
                     case 3:
                         string tmp = srcFileName.Text.ToLower();
                         string firstChar = tmp.Substring(0, 1).ToUpper();
-                        tmp =  tmp.Remove(0, 1).Insert(0, firstChar);
+                        tmp = tmp.Remove(0, 1).Insert(0, firstChar);
                         desFileName.Text = tmp;
                         break;
                 }
