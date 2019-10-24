@@ -41,10 +41,10 @@
                     Name="createNewCaseButton" Click="CreateNewCaseButton_Click"/>
             <Button Width="100" Height="30" Margin="10" 
                     Content="Normalize!" FontWeight="Bold"
-                    Name="normalizeFileNameButton"/>
+                    Name="normalizeFileNameButton" Click="NormalizeFileNameButton_Click"/>
             <Button Width="100" Height="30" Margin="10" 
                     Content="Move!" FontWeight="Bold"
-                    Name="moveFileNameButton"/>
+                    Name="moveFileNameButton" Click="MoveFileNameButton_Click"/>
             <Button Width="100" Height="30" Margin="10" 
                     Content="Generate GUID!" FontWeight="Bold"
                     Name="createGUIDNameButton"

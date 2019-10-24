@@ -107,5 +107,67 @@ namespace Project01_BatchRename
         {
             recaseMode = caseMode;
         }
+
+        private void NormalizeFileNameButton_Click(object sender, RoutedEventArgs e)
+        {
+            desFileName.Text = Global.NormalizeString(srcFileName.Text);
+            
+        }
+
+        private void MoveFileNameButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool stat = true;
+            string src = srcFileName.Text;
+            string decDigits = "0123456789";
+            char[] arrDigits = decDigits.ToCharArray();
+            int startPos = src.IndexOfAny(arrDigits);
+            int endPos = 0;
+            if (startPos == -1)
+            {
+                stat = false;
+            }
+            else
+            {
+                int count = 1;
+                endPos = startPos;
+                do
+                {
+                    endPos++;
+
+                    if ((decDigits.IndexOf(src[endPos]) >= 0) || (src[endPos] == '-'))
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                } while (true);
+                if (count != 13) stat = false;
+            }
+            if (!stat)
+            {
+                MessageBox.Show("Cannot find ISBN inside file's name!", "Not Found!");
+                return;
+            }
+
+            string extension = src.Substring(src.LastIndexOf('.'));
+            src = src.Remove(src.LastIndexOf('.'));
+            string ISBN = src.Substring(startPos, endPos - startPos);
+            string bookName;
+
+            if (startPos == 0)
+            {
+                src = src.Remove(endPos, 1);
+                bookName = src.Substring(endPos);
+                desFileName.Text = bookName + " " + ISBN + extension;
+            }
+            else
+            {
+                bookName = src.Substring(0, startPos - 1);
+                desFileName.Text = ISBN + " " + bookName + extension;
+            }
+        }
     }
 }
