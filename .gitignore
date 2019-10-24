@@ -1,3 +1,13 @@
 .vs
 *.exe
 *.exe
+*.exe
+Project01_BatchRename/bin/Debug/Project01_BatchRename.exe
+Project01_BatchRename/bin/Debug/Project01_BatchRename.pdb
+Project01_BatchRename/obj/Debug/Project01_BatchRename.csproj.CoreCompileInputs.cache
+Project01_BatchRename/obj/Debug/Project01_BatchRename.csproj.FileListAbsolute.txt
+Project01_BatchRename/obj/Debug/Project01_BatchRename.csproj.GenerateResource.cache
+Project01_BatchRename/obj/Debug/Project01_BatchRename.exe
+Project01_BatchRename/obj/Debug/Project01_BatchRename.pdb
+Project01_BatchRename/obj/Debug/Project01_BatchRename_MarkupCompile.cache
+Project01_BatchRename/obj/Debug/Project01_BatchRename_MarkupCompile.lref
