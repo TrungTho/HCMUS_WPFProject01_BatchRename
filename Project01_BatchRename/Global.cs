@@ -55,8 +55,11 @@ namespace Project01_BatchRename
             } while (true);
 
             pos = res.LastIndexOf('.') - 1;
-            if (res[pos] == ' ')
-                res = res.Remove(pos, 1);
+            if (pos > -1)
+            {
+                if (res[pos] == ' ')
+                    res = res.Remove(pos, 1);
+            }
 
             // Capitalize first char of each word
             res = ReplaceCharAt(res, 0, toUpper(res[0]));
