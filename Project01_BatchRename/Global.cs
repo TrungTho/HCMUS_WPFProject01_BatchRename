@@ -4,11 +4,6 @@ namespace Project01_BatchRename
 {
     class Global
     {
-        
-        public const int upperCase = 1;
-        public const int lowerCase = 2;
-        public const int sentenceCase = 3;
-
         public static char toUpper(char c)
         {
             if (c >= 'a' && c <= 'z')

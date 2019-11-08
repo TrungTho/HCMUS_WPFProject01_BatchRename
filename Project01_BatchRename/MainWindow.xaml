@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project01_BatchRename"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="800">
+        Title="MainWindow" Height="400" Width="800" Loaded="Window_Loaded">
     <StackPanel
         Orientation="Horizontal"
         Background="GreenYellow">
@@ -49,7 +49,7 @@
                     Content="Generate GUID!" FontWeight="Bold"
                     Name="createGUIDNameButton"
                     Click="CreateGUIDNameButton_Click"/>
-          
+
         </StackPanel>
 
         <StackPanel>
@@ -59,7 +59,18 @@
                  Margin="10"
                  Text="new file name appear here!!!"
                  TextWrapping="Wrap"/>
-
+            <Border Canvas.Left="550" Canvas.Top="350.6" BorderBrush="#FF007ACC" BorderThickness="1">
+                <Canvas Height="70" Canvas.Left="227.2" Canvas.Top="350.6" Width="298">
+                    <Label Content="Move" VerticalAlignment="Top" Margin="4,0,0,0" HorizontalAlignment="Left" Padding="0"
+                        Height="auto" Width="auto" FontWeight="Bold" TextOptions.TextFormattingMode="Display" Foreground="Red" FontSize="14" />
+                    <TextBlock Text="Number of characters" Canvas.Top="24" Canvas.Left="4"/>
+                    <TextBox x:Name="txtBoxMoveNumChars" Text="7" TextWrapping="NoWrap" Width="60" Background="White" Canvas.Left="124" Canvas.Top="24" Height="16" Padding="0,-1,0,0"/>
+                    <RadioButton x:Name="moveRadioToFront" Content="To Front" Canvas.Left="196" Canvas.Top="24" GroupName="MoveOptions" ToolTip="Move characters at last to front"/>
+                    <RadioButton x:Name="moveRadioToLast" Content="To Last" Canvas.Left="196" Canvas.Top="47" GroupName="MoveOptions" ToolTip="Move characters at front to last"/>
+                    <CheckBox x:Name="moveISBNCheckBox" Content="ISBN style" Canvas.Left="10" Canvas.Top="47" Height="15"
+                              ToolTip="Characters to move must include the space between ISBN and book's name"/>
+                </Canvas>
+            </Border>
         </StackPanel>
 
     </StackPanel>

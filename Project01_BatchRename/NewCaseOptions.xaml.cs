@@ -19,6 +19,10 @@ namespace Project01_BatchRename
     /// </summary>
     public partial class NewCaseOptions : Window
     {
+        const int lowerCase = 2;
+        const int upperCase = 1;
+        const int sentenceCase = 3;
+
         public NewCaseOptions()
         {
             InitializeComponent();
@@ -29,17 +33,17 @@ namespace Project01_BatchRename
 
         private void RadioUpperCase_Checked(object sender, RoutedEventArgs e)
         {
-            BoxChecked?.Invoke(Global.upperCase);
+            BoxChecked?.Invoke(upperCase);
         }
 
         private void RadioLowerCase_Checked(object sender, RoutedEventArgs e)
         {
-            BoxChecked?.Invoke(Global.lowerCase);
+            BoxChecked?.Invoke(lowerCase);
         }
 
         private void RadioSentenceCase_Checked(object sender, RoutedEventArgs e)
         {
-            BoxChecked?.Invoke(Global.sentenceCase);
+            BoxChecked?.Invoke(sentenceCase);
         }
 
 
@@ -54,7 +58,5 @@ namespace Project01_BatchRename
             this.DialogResult = false;
             this.Close();
         }
-
-
     }
 }

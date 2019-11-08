@@ -46,6 +46,7 @@ namespace Project01_BatchRename
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void CreateGUIDNameButton_Click(object sender, RoutedEventArgs e)
@@ -114,60 +115,136 @@ namespace Project01_BatchRename
             
         }
 
+        //private void MoveFileNameButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    bool stat = true;
+        //    string src = srcFileName.Text;
+        //    string decDigits = "0123456789";
+        //    char[] arrDigits = decDigits.ToCharArray();
+        //    int startPos = src.IndexOfAny(arrDigits);
+        //    int endPos = 0;
+        //    if (startPos == -1)
+        //    {
+        //        stat = false;
+        //    }
+        //    else
+        //    {
+        //        int count = 1;
+        //        endPos = startPos;
+        //        do
+        //        {
+        //            endPos++;
+
+        //            if ((decDigits.IndexOf(src[endPos]) >= 0) || (src[endPos] == '-'))
+        //            {
+        //                count++;
+        //            }
+        //            else
+        //            {
+        //                break;
+        //            }
+
+        //        } while (true);
+        //        if (count != 13) stat = false;
+        //    }
+        //    if (!stat)
+        //    {
+        //        MessageBox.Show("Cannot find ISBN inside file's name!", "Not Found!");
+        //        return;
+        //    }
+
+        //    string extension = src.Substring(src.LastIndexOf('.'));
+        //    src = src.Remove(src.LastIndexOf('.'));
+        //    string ISBN = src.Substring(startPos, endPos - startPos);
+        //    string bookName;
+
+        //    if (startPos == 0)
+        //    {
+        //        src = src.Remove(endPos, 1);
+        //        bookName = src.Substring(endPos);
+        //        desFileName.Text = bookName + " " + ISBN + extension;
+        //    }
+        //    else
+        //    {
+        //        bookName = src.Substring(0, startPos - 1);
+        //        desFileName.Text = ISBN + " " + bookName + extension;
+        //    }
+        //}
+
         private void MoveFileNameButton_Click(object sender, RoutedEventArgs e)
         {
-            bool stat = true;
+            //"If left blank, move characters at front to last or vice versa. Else, move characters starting from the index to front or to last."
+            int numOfChars;
+            
             string src = srcFileName.Text;
-            string decDigits = "0123456789";
-            char[] arrDigits = decDigits.ToCharArray();
-            int startPos = src.IndexOfAny(arrDigits);
-            int endPos = 0;
-            if (startPos == -1)
+            string extension = "";
+            int dotPos = src.LastIndexOf('.');
+            if (dotPos >= 0)
             {
-                stat = false;
+                extension = src.Substring(dotPos);
+                src = src.Remove(dotPos);
             }
-            else
+                      
+            try
             {
-                int count = 1;
-                endPos = startPos;
-                do
+                numOfChars = int.Parse(txtBoxMoveNumChars.Text);
+                if (numOfChars < 0 || numOfChars > src.Length)
                 {
-                    endPos++;
-
-                    if ((decDigits.IndexOf(src[endPos]) >= 0) || (src[endPos] == '-'))
-                    {
-                        count++;
-                    }
-                    else
-                    {
-                        break;
-                    }
-
-                } while (true);
-                if (count != 13) stat = false;
+                    MessageBox.Show("Number of characters to move is outside valid range!", "Error");
+                    return;
+                }
             }
-            if (!stat)
+            catch (Exception ex)
             {
-                MessageBox.Show("Cannot find ISBN inside file's name!", "Not Found!");
+                MessageBox.Show(ex.Message, "Error at Number of characters");
                 return;
             }
-
-            string extension = src.Substring(src.LastIndexOf('.'));
-            src = src.Remove(src.LastIndexOf('.'));
-            string ISBN = src.Substring(startPos, endPos - startPos);
-            string bookName;
-
-            if (startPos == 0)
+            
+            if (moveISBNCheckBox.IsChecked == false)
             {
-                src = src.Remove(endPos, 1);
-                bookName = src.Substring(endPos);
-                desFileName.Text = bookName + " " + ISBN + extension;
+                if (moveRadioToFront.IsChecked == true)
+                {
+                    string tmp = src.Substring(src.Length - numOfChars);
+                    src = src.Remove(src.Length - numOfChars);
+                    desFileName.Text = tmp + src + extension;
+                }
+                if (moveRadioToLast.IsChecked == true)
+                {
+                    string tmp = src.Substring(0, numOfChars);
+                    //src = src.Substring(numOfChars);
+                    src = src.Remove(0, numOfChars);
+                    desFileName.Text = src + tmp + extension;
+                }
             }
             else
             {
-                bookName = src.Substring(0, startPos - 1);
-                desFileName.Text = ISBN + " " + bookName + extension;
+                if (moveRadioToFront.IsChecked == true)
+                {
+                    string tmp = src.Substring(src.Length - numOfChars);
+                    src = src.Remove(src.Length - numOfChars);
+                    desFileName.Text = tmp.Remove(0, 1) + " " + src + extension;
+                }
+                if (moveRadioToLast.IsChecked == true)
+                {
+                    string tmp = src.Substring(0, numOfChars);
+                    src = src.Remove(0, numOfChars);
+                    desFileName.Text = src + " " + tmp.Remove(tmp.Length - 1) + extension;
+                }
             }
         }
+
+        //private void SrcFileName_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    if (txtBoxMoveNumChars != null)
+        //    {
+        //        txtBoxMoveNumChars.Text = srcFileName.Text.Length.ToString();
+        //    }
+        //}
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //txtBoxMoveNumChars.Text = srcFileName.Text.Length.ToString();
+        }
+
     }
 }
