@@ -51,8 +51,8 @@ namespace Project01_BatchRename
             }
         }
 
-        List<StringOperations> _prototypes = new List<StringOperations>(); //list of operations can perform
-        BindingList<StringOperations> readyLoadOper = new BindingList<StringOperations>(); //list of operation that was chosen
+        List<StringOperation> _prototypes = new List<StringOperation>(); //list of operations can perform
+        BindingList<StringOperation> readyLoadOper = new BindingList<StringOperation>(); //list of operation that was chosen
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //load operations to prototype to show in combobox
@@ -99,9 +99,8 @@ namespace Project01_BatchRename
             _prototypes.Add(prototype5);
 
             comboBoxToChooseOperations.ItemsSource = _prototypes;
-
+            comboBoxToChooseOperations.SelectedIndex = 2;
             listBoxOperations.ItemsSource = readyLoadOper;
-
         }
 
         public MainWindow()
@@ -111,18 +110,20 @@ namespace Project01_BatchRename
 
         private void addOperation_Click(object sender, RoutedEventArgs e)
         {
-            StringOperations newOper = comboBoxToChooseOperations.SelectedItem as StringOperations;
+            StringOperation newOper = comboBoxToChooseOperations.SelectedItem as StringOperation;
             if (newOper != null)
                 readyLoadOper.Add(newOper.Clone());
             else
                 MessageBox.Show("Please choose Operation to add!");
+            listBoxOperations.SelectedIndex = listBoxOperations.Items.Count - 1;
+            listBoxOperations.ScrollIntoView(listBoxOperations.SelectedItem);
         }
 
         private void downButton(object sender, RoutedEventArgs e)
         {
             if (listBoxOperations.SelectedIndex < readyLoadOper.Count - 1)
             {
-                var _tmp = listBoxOperations.SelectedItem as StringOperations;
+                var _tmp = listBoxOperations.SelectedItem as StringOperation;
                 int index = listBoxOperations.SelectedIndex;
                 readyLoadOper.RemoveAt(index);
                 readyLoadOper.Insert(index + 1, _tmp);
@@ -139,7 +140,7 @@ namespace Project01_BatchRename
         {
             if (listBoxOperations.SelectedIndex > 0)
             {
-                var _tmp = listBoxOperations.SelectedItem as StringOperations;
+                var _tmp = listBoxOperations.SelectedItem as StringOperation;
                 int index = listBoxOperations.SelectedIndex;
                 readyLoadOper.RemoveAt(index);
                 readyLoadOper.Insert(index - 1, _tmp);
@@ -174,7 +175,7 @@ namespace Project01_BatchRename
         {
             while (readyLoadOper.Count != 0)
                 readyLoadOper.RemoveAt(0);
-            MessageBox.Show("Remove All Operations from ListBox");
+            MessageBox.Show("Removed All Operations from ListBox.", "Alert");
         }
 
         private void resetAllList()
@@ -250,6 +251,33 @@ namespace Project01_BatchRename
             }
 
             listviewOfFiles.ItemsSource = _fileNames; //update to UI of listview
+        }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button buttonClose && buttonClose.Tag is ListBoxItem lsBoxItem)
+            {
+                var operToRemove = lsBoxItem.Content as StringOperation;
+                readyLoadOper.Remove(operToRemove);
+            }
+        }
+
+        private void FileExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();         
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            if (MessageBox.Show(this, "Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void HelpAbout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(this, "Nguyễn Khánh Hoàng - 1712457\n      Trần Trung Thọ      - 1712798", "About Us");
         }
     }
 }

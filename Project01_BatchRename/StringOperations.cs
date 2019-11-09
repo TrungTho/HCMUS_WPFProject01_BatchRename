@@ -12,7 +12,7 @@ namespace Project01_BatchRename
         public string Origin { get; set; } //source of data to operate
     }
 
-   
+
     public class ReplaceArguments : StringArguments
     {
         public string oldPattern { get; set; } //string to to replaced
@@ -28,7 +28,7 @@ namespace Project01_BatchRename
     {
 
     }
-       
+
     public class MoveCharactersArguments : StringArguments
     {
         public int numbersOfChar { get; set; } //numbers of chars to move
@@ -40,17 +40,17 @@ namespace Project01_BatchRename
 
     }
 
-    public abstract class StringOperations
+    public abstract class StringOperation
     {
         public StringArguments Arguments { get; set; }
         public abstract string NameOfOperation { get; }
         public abstract string DescriptionOfOperation { get; }
 
         public abstract string Operate();
-        public abstract StringOperations Clone();
+        public abstract StringOperation Clone();
     }
 
-    public class Replace : StringOperations
+    public class Replace : StringOperation
     {
         public override string NameOfOperation => "Replace";
         public override string DescriptionOfOperation
@@ -62,7 +62,7 @@ namespace Project01_BatchRename
             }
         }
 
-        public override StringOperations Clone()
+        public override StringOperation Clone()
         {
             var oldArgs = Arguments as ReplaceArguments;
             return new Replace()
@@ -100,9 +100,9 @@ namespace Project01_BatchRename
         }
     }
 
-    public class NewCase : StringOperations
+    public class NewCase : StringOperation
     {
-        public override string NameOfOperation => "NewCase";
+        public override string NameOfOperation => "New Case";
 
         public override string DescriptionOfOperation
         {
@@ -113,13 +113,13 @@ namespace Project01_BatchRename
                     return $"New Case: AllCap";
                 else
                     if (args.typeOfNewCase == 2)
-                        return $"New Case: AllLow";
-                    else
-                        return $"New Case: Normal";
+                    return $"New Case: AllLow";
+                else
+                    return $"New Case: Normal";
             }
         }
 
-        public override StringOperations Clone()
+        public override StringOperation Clone()
         {
             var oldArgs = Arguments as NewCaseArguments;
             return new NewCase()
@@ -147,14 +147,14 @@ namespace Project01_BatchRename
                 case 3:
                     _tmp = _tmp.ToLower();
                     string firstChar = _tmp.Substring(0, 1).ToUpper();
-                    _tmp = _tmp.Remove(0, 1).Insert(0, firstChar); 
+                    _tmp = _tmp.Remove(0, 1).Insert(0, firstChar);
                     break;
             }
             return _tmp;
         }
     }
 
-    public class Normalize : StringOperations
+    public class Normalize : StringOperation
     {
         public override string NameOfOperation => "Normalize";
 
@@ -166,7 +166,7 @@ namespace Project01_BatchRename
             }
         }
 
-        public override StringOperations Clone()
+        public override StringOperation Clone()
         {
             var oldArgs = Arguments as NormalizeArguments;
             return new Normalize()
@@ -184,9 +184,9 @@ namespace Project01_BatchRename
             return Global.NormalizeString(argr.Origin);
         }
     }
-    public class MoveCharacters : StringOperations
+    public class MoveCharacters : StringOperation
     {
-        public override string NameOfOperation => "Move ISBN";
+        public override string NameOfOperation => "Move";
 
         public override string DescriptionOfOperation
         {
@@ -200,7 +200,7 @@ namespace Project01_BatchRename
             }
         }
 
-        public override StringOperations Clone()
+        public override StringOperation Clone()
         {
             var oldArgs = Arguments as MoveCharactersArguments;
             return new MoveCharacters()
@@ -208,8 +208,8 @@ namespace Project01_BatchRename
                 Arguments = new MoveCharactersArguments()
                 {
                     Origin = oldArgs.Origin,
-                    typeOfMove=oldArgs.typeOfMove,
-                    numbersOfChar=oldArgs.numbersOfChar
+                    typeOfMove = oldArgs.typeOfMove,
+                    numbersOfChar = oldArgs.numbersOfChar
                 }
             };
         }
@@ -220,7 +220,7 @@ namespace Project01_BatchRename
         }
     }
 
-    public class GUIDGenerate : StringOperations
+    public class GUIDGenerate : StringOperation
     {
         public override string NameOfOperation => "GUID Generate";
 
@@ -232,7 +232,7 @@ namespace Project01_BatchRename
             }
         }
 
-        public override StringOperations Clone()
+        public override StringOperation Clone()
         {
             var oldArgs = Arguments as GUIDGenerateArguments;
             return new GUIDGenerate()
