@@ -5,60 +5,176 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project01_BatchRename"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="800">
-    <StackPanel
-        Orientation="Horizontal"
-        Background="GreenYellow">
-        <StackPanel>
-            <TextBox Width="300" Height="200"
-                 Text="JackandOggyhavesExoNYouTubeandNeTFlitxwithYOuTUbEKIDonYouTUBE"
-                 Background="AliceBlue"
-                 Name="srcFileName"
-                 Margin="10"
-                 TextWrapping="Wrap"/>
-            <StackPanel
-                Orientation="Horizontal" Margin="10">
-                <Label Content="oldPattern" Width="100"/>
-                <TextBox Name="txtPattern" Text="youtube" Width="100"/>
-            </StackPanel>
+        Title="MainWindow" Height="600" Width="1000" Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate x:Key="GUIDTemplate">
+            <Border BorderBrush="#FF007ACC" BorderThickness="1">
+                <Canvas Height="44" Width="284">
+                    <Label Content="GUID" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+                       Height="auto" Width="auto" FontWeight="Bold"
+                       TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10"  Canvas.Top="1"/>
+                    <Button Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0">
+                        <Image Source="Images/closebutton.jpg"  Width="14" Height="14">
+                        </Image>
+                    </Button>
+                    <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Set the filename to a newly initialized GUID string." Canvas.Top="24"/>
+                </Canvas>
+            </Border>
+        </DataTemplate>
 
-            <StackPanel
-                Orientation="Horizontal" Margin="10">
-                <Label Content="new Pattern" Width="100"/>
-                <TextBox Name="txtNewPattern" Text="---replaced---" Width="100"/>
-            </StackPanel>
+        <DataTemplate x:Key="MoveTemplate">
+            <Border BorderBrush="#FF007ACC" BorderThickness="1">
+                <Canvas Height="66" Canvas.Left="227.2" Canvas.Top="350.6" Width="284">
+                    <Label Content="Move" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+                        Height="auto" Width="auto" FontWeight="Bold" TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10"  Canvas.Top="1"/>
+                    <TextBlock Text="Number of characters" Canvas.Top="24" Canvas.Left="10"/>
+                    <TextBox x:Name="txtBoxMoveNumChars" TextWrapping="NoWrap" Width="68" Background="White" Canvas.Left="130" Canvas.Top="24" Height="16" Padding="0,-1,0,0"/>
+                    <RadioButton x:Name="moveRadioToFront" Content="To Front" Canvas.Left="209.333" Canvas.Top="25.04" GroupName="MoveOptions" ToolTip="Move characters at last to front"/>
+                    <RadioButton x:Name="moveRadioToLast" Content="To Last" Canvas.Left="209.333" Canvas.Top="47.04" GroupName="MoveOptions" ToolTip="Move characters at front to last"/>
+                    <CheckBox x:Name="moveISBNCheckBox" Content="ISBN style" Canvas.Left="10" Canvas.Top="47.04" Height="15"
+                              ToolTip="Characters to move must include the space between ISBN and book's name"/>
+                    <Button Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0" >
+                        <Image Source="Images/closebutton.jpg"  Width="14" Height="14">
+                        </Image>
+                    </Button>
+                </Canvas>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="NewCaseTemplate">
+            <Border BorderBrush="#FF007ACC" BorderThickness="1">
+                <Canvas Height="64" Width="284">
+                    <Label Content="New Case" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+                       Height="auto" Width="auto" FontWeight="Bold"
+                       TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10" Canvas.Top="1"/>
+                    <Button Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0">
+                        <Image Source="Images/closebutton.jpg"  Width="14" Height="14"></Image>
+                    </Button>
+                    <RadioButton x:Name="radioUpperCase" Content="UPPERCASE" Canvas.Left="27" Canvas.Top="23"/>
+                    <RadioButton x:Name="radioLowerCase" Content="lowercase" Canvas.Left="154" Canvas.Top="23" />
+                    <RadioButton x:Name="radioSentenceCase" Content="Sentence case" Canvas.Left="27" Canvas.Top="45" />
+                </Canvas>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="NormalizeTemplate">
+            <Border BorderBrush="#FF007ACC" BorderThickness="1">
+                <Canvas Height="44" Width="284">
+                    <Label Content="Normalize" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+                       Height="auto" Width="auto" FontWeight="Bold"
+                       TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10"  Canvas.Top="1"/>
+
+                    <Button Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0">
+                        <Image Source="Images/closebutton.jpg"  Width="14" Height="14">
+                        </Image>
+                    </Button>
+                    <TextBlock Canvas.Left="10" TextWrapping="Wrap"
+                           Text="Normalize filename which is in full name form."
+                           Canvas.Top="24"/>
+                </Canvas>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ReplaceTemplate">
+            <Border BorderBrush="#FF007ACC" BorderThickness="1">
+                <Canvas Height="70" Width="284">
+                    <Label Content="Replace" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+                       Height="auto" Width="auto" FontWeight="Bold"
+                       TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10" Canvas.Top="1"/>
+                    <TextBlock Text="oldPattern" Canvas.Left="18" Canvas.Top="25" RenderTransformOrigin="0.472,0.647"></TextBlock>
+                    <TextBox TextWrapping="NoWrap" Width="185" Background="White" Canvas.Left="89" Canvas.Top="23"/>
+                    <TextBlock Text="newPattern" Canvas.Left="18" Canvas.Top="48"></TextBlock>
+                    <TextBox TextWrapping="NoWrap" Width="185" Background="White" Canvas.Left="89" Canvas.Top="46"/>
+                    <Button Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0">
+                        <Image Source="Images/closebutton.jpg"  Width="14" Height="14"></Image>
+                    </Button>
+                </Canvas>
+            </Border>
+        </DataTemplate>
+
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+
+    </Window.Resources>
 
 
+    <StackPanel Height="567" Background="Violet" VerticalAlignment="Top" Margin="0">
+        <StackPanel Height="20" Background="Red" >
+            <TextBlock Text="menu view...>"/>
         </StackPanel>
 
-        <StackPanel>
-            <Button Width="100" Height="30" Margin="10" 
-                    Content="Replace!" FontWeight="Bold"
-                    Name="replaceFileNameButton"
-                    Click="ReplaceFileNameButton_Click"/>
-            <Button Width="100" Height="30" Margin="10" 
-                    Content="New Case!" FontWeight="Bold"
-                    Name="createNewCaseButton" Click="CreateNewCaseButton_Click"/>
-            <Button Width="100" Height="30" Margin="10" 
-                    Content="Normalize!" FontWeight="Bold"
-                    Name="normalizeFileNameButton" Click="NormalizeFileNameButton_Click"/>
-            <Button Width="100" Height="30" Margin="10" 
-                    Content="Move!" FontWeight="Bold"
-                    Name="moveFileNameButton" Click="MoveFileNameButton_Click"/>
-            <Button Width="100" Height="30" Margin="10" 
-                    Content="Generate GUID!" FontWeight="Bold"
-                    Name="createGUIDNameButton"
-                    Click="CreateGUIDNameButton_Click"/>
-          
-        </StackPanel>
+        <StackPanel Height="548" Background="AliceBlue" Orientation="Horizontal">
+            <StackPanel Width="300" Background="AliceBlue" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    
+                    <ComboBox Name="comboBoxToChooseOperations" Text="Operation"
+                              Width="90" Height="25" Margin="5">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NameOfOperation}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    
+                    <Button Content="Add" Width="80" Height="25" 
+                            Margin="5" Click="addOperation_Click"/>
 
-        <StackPanel>
-            <TextBox Width="300" Height="200"
-                 Background="AliceBlue"
-                 Name="desFileName"
-                 Margin="10"
-                 Text="new file name appear here!!!"
-                 TextWrapping="Wrap"/>
+                    <Button   Height="25" Width="25" Margin="5" Click="upButton">
+                        <StackPanel>
+                            <Image Source="Images/up.png" />
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button   Height="25" Width="25" Margin="5" Click="downButton">
+                        <StackPanel>
+                            <Image Source="Images/down.png" />
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+
+                <ListBox Name="listBoxOperations" ItemsSource="{Binding}" 
+                        Height="407">
+                    <ListBox.ItemTemplateSelector>
+                        <local:OperationDataTemplates/>
+                    </ListBox.ItemTemplateSelector>
+                </ListBox>
+                <Canvas Height="25">
+                    <Button Content="Clear All" Width="80" Height="25" 
+                            Canvas.Left="10" Click="clearAllOperationsButton"/>
+                    <Button Content="Load Preset" Width="80" Height="25" 
+                            HorizontalAlignment="Left" Click="loadPresetButton" Canvas.Left="110" RenderTransformOrigin="0.856,0.54"/>
+                    <Button Content="Save Preset" Width="80" Height="25" 
+                            HorizontalAlignment="Right" Click="savePresetButton" Canvas.Left="210"/>
+                </Canvas>
+                <StackPanel Background="Red" Height="81">
+                    <TextBlock Text="preset stuff"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Width="691">
+                <StackPanel Height="36" Orientation="Horizontal">
+                    <Button Content="Load Files" Width="80" Height="25" Margin="5" Click="loadFilesButton"/>
+                    <Button Content="Load Folders" Width="80" Height="25" Margin="5" Click="loadFoldersButton"/>
+                </StackPanel>
+                <ListView Name="listviewOfFiles" Height="432">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="STT" Width="25" DisplayMemberBinding="{Binding id}" />
+                            <GridViewColumn Header="Filename" Width="200" DisplayMemberBinding="{Binding oldName}" />
+                            <GridViewColumn Header="New Filename" Width="200" DisplayMemberBinding="{Binding newName}" />
+                            <GridViewColumn Header="Path" Width="200" DisplayMemberBinding="{Binding filePath}" />
+                            <GridViewColumn Header="Error" Width="100" DisplayMemberBinding="{Binding err}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Content="Start Batch!!!" FontSize="50"
+                        FontStretch="UltraExpanded" Foreground="Green" 
+                        FontStyle="Oblique" FontWeight="Bold"
+                        VerticalContentAlignment="Center"
+                        Height="80" Click="fireStartBatchEvent"/>
+            </StackPanel>
 
         </StackPanel>
 
