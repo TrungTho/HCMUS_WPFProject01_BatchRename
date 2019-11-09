@@ -11,3 +11,5 @@ Project01_BatchRename/obj/Debug/Project01_BatchRename.exe
 Project01_BatchRename/obj/Debug/Project01_BatchRename.pdb
 Project01_BatchRename/obj/Debug/Project01_BatchRename_MarkupCompile.cache
 Project01_BatchRename/obj/Debug/Project01_BatchRename_MarkupCompile.lref
+Project01_BatchRename/bin/*
+Project01_BatchRename/obj/*
