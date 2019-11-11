@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Project01_BatchRename"
         mc:Ignorable="d"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         Title="MainWindow" Height="400" Width="800" Loaded="Window_Loaded">
     <StackPanel
         Orientation="Horizontal"
@@ -23,6 +24,8 @@
                 <TextBox Name="txtPattern" Text="youtube" Width="100"/>
             </StackPanel>
 =======
+=======
+>>>>>>> Stashed changes
 		Title="Mini Project 01 - Batch Rename" Height="600" Width="1008" Loaded="Window_Loaded" Closing="Window_Closing" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" Icon="Images/f2_key.png">
     <Window.Resources>
         <DataTemplate x:Key="GUIDTemplate">
@@ -127,6 +130,7 @@
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         </StackPanel>
 
         <StackPanel>
@@ -148,6 +152,8 @@
                     Name="createGUIDNameButton"
                     Click="CreateGUIDNameButton_Click"/>
 =======
+=======
+>>>>>>> Stashed changes
     <StackPanel Height="567" Background="Violet" VerticalAlignment="Top" Margin="0">
         <Border BorderBrush="#FFACACAC" BorderThickness="0,0,0,1">
             <DockPanel Height="20" Background="#FFDDDDDD">
@@ -198,6 +204,7 @@
         </StackPanel>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <StackPanel>
             <TextBox Width="300" Height="200"
                  Background="AliceBlue"
@@ -218,6 +225,8 @@
                 </Canvas>
             </Border>
 =======
+=======
+>>>>>>> Stashed changes
                 <ListBox x:Name="listBoxOperations" ItemsSource="{Binding}" 
                         Height="470" BorderThickness="1" 
                          ScrollViewer.HorizontalScrollBarVisibility="Hidden" 

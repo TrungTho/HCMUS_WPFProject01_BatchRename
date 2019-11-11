@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿#pragma checksum "..\..\MainWindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "BA502808E00580AE074481D50C92F819A50D9623"
+=======
+﻿#pragma checksum "..\..\MainWindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "D44E199A40149168848A29C81D53BE0AEDE3E52B"
+>>>>>>> Stashed changes
 =======
 ﻿#pragma checksum "..\..\MainWindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "D44E199A40149168848A29C81D53BE0AEDE3E52B"
 >>>>>>> Stashed changes
@@ -46,7 +50,11 @@ namespace Project01_BatchRename {
         
         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         #line 16 "..\..\MainWindow.xaml"
+=======
+        #line 124 "..\..\MainWindow.xaml"
+>>>>>>> Stashed changes
 =======
         #line 124 "..\..\MainWindow.xaml"
 >>>>>>> Stashed changes
@@ -58,7 +66,11 @@ namespace Project01_BatchRename {
         
         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         #line 22 "..\..\MainWindow.xaml"
+=======
+        #line 154 "..\..\MainWindow.xaml"
+>>>>>>> Stashed changes
 =======
         #line 154 "..\..\MainWindow.xaml"
 >>>>>>> Stashed changes
@@ -70,7 +82,11 @@ namespace Project01_BatchRename {
         
         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         #line 28 "..\..\MainWindow.xaml"
+=======
+        #line 190 "..\..\MainWindow.xaml"
+>>>>>>> Stashed changes
 =======
         #line 190 "..\..\MainWindow.xaml"
 >>>>>>> Stashed changes
@@ -205,6 +221,7 @@ namespace Project01_BatchRename {
             #line hidden
             return;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             case 2:
             this.srcFileName = ((System.Windows.Controls.TextBox)(target));
             return;
@@ -241,6 +258,29 @@ namespace Project01_BatchRename {
             return;
             case 10:
             
+=======
+            case 7:
+            
+            #line 111 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.FileExit_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 8:
+            
+            #line 114 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.HelpAbout_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 9:
+            this.comboBoxToChooseOperations = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 10:
+            
+>>>>>>> Stashed changes
             #line 134 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.addOperation_Click);
             
@@ -257,6 +297,7 @@ namespace Project01_BatchRename {
             #line hidden
             return;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             case 6:
             this.createNewCaseButton = ((System.Windows.Controls.Button)(target));
             
@@ -265,6 +306,10 @@ namespace Project01_BatchRename {
 =======
             case 12:
             
+=======
+            case 12:
+            
+>>>>>>> Stashed changes
             #line 140 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.downButton);
 >>>>>>> Stashed changes
@@ -273,12 +318,15 @@ namespace Project01_BatchRename {
             #line hidden
             return;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             case 7:
             this.normalizeFileNameButton = ((System.Windows.Controls.Button)(target));
             
             #line 44 "..\..\MainWindow.xaml"
             this.normalizeFileNameButton.Click += new System.Windows.RoutedEventHandler(this.NormalizeFileNameButton_Click);
 =======
+=======
+>>>>>>> Stashed changes
             case 13:
             
             #line 144 "..\..\MainWindow.xaml"
@@ -308,12 +356,15 @@ namespace Project01_BatchRename {
             #line hidden
             return;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             case 8:
             this.moveFileNameButton = ((System.Windows.Controls.Button)(target));
             
             #line 47 "..\..\MainWindow.xaml"
             this.moveFileNameButton.Click += new System.Windows.RoutedEventHandler(this.MoveFileNameButton_Click);
 =======
+=======
+>>>>>>> Stashed changes
             case 17:
             
             #line 168 "..\..\MainWindow.xaml"
@@ -324,6 +375,7 @@ namespace Project01_BatchRename {
             #line hidden
             return;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             case 9:
             this.createGUIDNameButton = ((System.Windows.Controls.Button)(target));
             
@@ -332,6 +384,10 @@ namespace Project01_BatchRename {
 =======
             case 18:
             
+=======
+            case 18:
+            
+>>>>>>> Stashed changes
             #line 171 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.savePresetButton);
 >>>>>>> Stashed changes
@@ -339,6 +395,7 @@ namespace Project01_BatchRename {
             #line default
             #line hidden
             return;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             case 10:
             this.desFileName = ((System.Windows.Controls.TextBox)(target));
@@ -355,6 +412,8 @@ namespace Project01_BatchRename {
             case 14:
             this.moveISBNCheckBox = ((System.Windows.Controls.CheckBox)(target));
 =======
+=======
+>>>>>>> Stashed changes
             case 19:
             
             #line 180 "..\..\MainWindow.xaml"
@@ -367,12 +426,21 @@ namespace Project01_BatchRename {
             
             #line 181 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.refreshButton_Click);
+<<<<<<< Updated upstream
             
             #line default
             #line hidden
             return;
             case 21:
             
+=======
+            
+            #line default
+            #line hidden
+            return;
+            case 21:
+            
+>>>>>>> Stashed changes
             #line 187 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.loadFoldersButton);
             

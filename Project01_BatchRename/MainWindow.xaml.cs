@@ -42,6 +42,9 @@ namespace Project01_BatchRename
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("newName"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("err"));
             }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
 
@@ -49,9 +52,15 @@ namespace Project01_BatchRename
         List<FileName> _fileName = null;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         class FileNameDao
         {
             //get data from database here (...)
+=======
+        class FileNameBUS
+        {
+
+>>>>>>> Stashed changes
 =======
         class FileNameBUS
         {
@@ -114,6 +123,9 @@ namespace Project01_BatchRename
             comboBoxToChooseOperations.SelectedIndex= 0;
 
             listBoxOperations.ItemsSource = readyLoadOper;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
 
@@ -139,6 +151,7 @@ namespace Project01_BatchRename
                 MessageBox.Show("Please choose Operation to add!");
             listBoxOperations.SelectedIndex = listBoxOperations.Items.Count - 1;
             listBoxOperations.ScrollIntoView(listBoxOperations.SelectedItem);
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
         }
 
@@ -195,6 +208,8 @@ namespace Project01_BatchRename
                     MessageBox.Show("Nothing to move!!!");
                 else
                     MessageBox.Show("Ouch!!! Can't move up anymore!");
+=======
+>>>>>>> Stashed changes
         }
 
         private void superdownButton(object sender, RoutedEventArgs e)
@@ -231,6 +246,43 @@ namespace Project01_BatchRename
                     MessageBox.Show("Ouch!!! Can't move up anymore!");
         }
 
+<<<<<<< Updated upstream
+=======
+        private void superdownButton(object sender, RoutedEventArgs e)
+        {
+            if (listBoxOperations.SelectedIndex > 0)
+            {
+                var _tmp = listBoxOperations.SelectedItem as StringOperations;
+                int index = listBoxOperations.SelectedIndex;
+                readyLoadOper.RemoveAt(index);
+                readyLoadOper.Insert(readyLoadOper.Count-1,_tmp);
+                listBoxOperations.SelectedIndex = readyLoadOper.Count-1;
+            }
+            else
+                if (readyLoadOper.Count == 0)
+                MessageBox.Show("Nothing to move!!!");
+            else
+                MessageBox.Show("Ouch!!! Can't move down anymore!");
+        }
+
+        private void superupButton(object sender, RoutedEventArgs e)
+        {
+            if (listBoxOperations.SelectedIndex > 0)
+            {
+                var _tmp = listBoxOperations.SelectedItem as StringOperations;
+                int index = listBoxOperations.SelectedIndex;
+                readyLoadOper.RemoveAt(index);
+                readyLoadOper.Insert(0, _tmp);
+                listBoxOperations.SelectedIndex = 0;
+            }
+            else
+                if (readyLoadOper.Count == 0)
+                    MessageBox.Show("Nothing to move!!!");
+                else
+                    MessageBox.Show("Ouch!!! Can't move up anymore!");
+        }
+
+>>>>>>> Stashed changes
         private Tuple<string, string> parseName(string filename)
         {
             string tmp = filename;
@@ -287,6 +339,7 @@ namespace Project01_BatchRename
             {
                 _tmpInputFilename = screen._filename;
             }
+<<<<<<< Updated upstream
 
             using (StreamWriter sw = new StreamWriter(_tmpInputFilename))
             {
@@ -321,6 +374,42 @@ namespace Project01_BatchRename
                         var _tmpArgs = oper.Arguments as NewCaseArguments;
                         sw.WriteLine($"NewCase {_tmpArgs.isUpper} {_tmpArgs.isLower} {_tmpArgs.isSentence}");
 
+=======
+
+            using (StreamWriter sw = new StreamWriter(_tmpInputFilename))
+            {
+
+                foreach (StringOperations oper in readyLoadOper)
+                {
+                    if (oper.NameOfOperation == "Replace")
+                    {
+                        var _tmpArgs = oper.Arguments as ReplaceArguments;
+                        sw.WriteLine($"Replace {_tmpArgs.oldPattern} {_tmpArgs.newPattern}");
+                    }
+                    else
+                        if (oper.NameOfOperation == "Move ISBN")
+                    {
+                        var _tmpArgs = oper.Arguments as MoveCharactersArguments;
+                        sw.WriteLine($"Move {_tmpArgs.numbersOfChar} {_tmpArgs.isToLast} {_tmpArgs.isToFirst}");
+                    }
+                    else
+                            if (oper.NameOfOperation == "Normalize")
+                    {
+                        var _tmpArgs = oper.Arguments as NormalizeArguments;
+                        sw.WriteLine($"Normalize");
+                    }
+                    else
+                                if (oper.NameOfOperation == "GUID Generate")
+                    {
+                        var _tmpArgs = oper.Arguments as GUIDGenerateArguments;
+                        sw.WriteLine($"GUID");
+                    }
+                    else
+                    {
+                        var _tmpArgs = oper.Arguments as NewCaseArguments;
+                        sw.WriteLine($"NewCase {_tmpArgs.isUpper} {_tmpArgs.isLower} {_tmpArgs.isSentence}");
+
+>>>>>>> Stashed changes
                     }
                 }
             }
@@ -341,9 +430,15 @@ namespace Project01_BatchRename
                     {
                         Console.WriteLine(line);
                     }
+<<<<<<< Updated upstream
 
                 }
 
+=======
+
+                }
+
+>>>>>>> Stashed changes
                 Console.ReadKey();
             }
             catch (Exception error)
@@ -351,6 +446,9 @@ namespace Project01_BatchRename
                 // thong bao loi.
                 MessageBox.Show("Khong the doc du lieu tu file da cho: ");
                 MessageBox.Show(error.Message);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             }
         }
@@ -363,6 +461,9 @@ namespace Project01_BatchRename
             while (readyLoadOper.Count != 0)
                 readyLoadOper.RemoveAt(0);
             MessageBox.Show("Removed All Operations from ListBox.", "Alert");
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
 
@@ -372,6 +473,7 @@ namespace Project01_BatchRename
             
         }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         //private void MoveFileNameButton_Click(object sender, RoutedEventArgs e)
         //{
@@ -431,6 +533,8 @@ namespace Project01_BatchRename
 
         private void MoveFileNameButton_Click(object sender, RoutedEventArgs e)
 =======
+=======
+>>>>>>> Stashed changes
         private void loadFilesButton(object sender, RoutedEventArgs e)
 >>>>>>> Stashed changes
         {
@@ -509,6 +613,112 @@ namespace Project01_BatchRename
 
 <<<<<<< Updated upstream
 =======
+        //operate operations to data
+        private void previewOperations()
+        {
+            if (readyLoadOper.Count == 0)
+            {
+                foreach (var file in _fileNames)
+                {
+                    file.newName = file.oldName;
+                    file.updateListviewUI();
+                }
+            }
+            else
+            {
+                bool firstTimeRun = true;
+
+                foreach (var oper in readyLoadOper)
+                {
+                    foreach (var datum in _fileNames)
+                    {
+                        if (firstTimeRun)
+                            oper.Arguments.Origin = datum.oldName;
+                        else
+                            oper.Arguments.Origin = datum.newName;
+
+                        datum.newName = oper.Operate();
+                        datum.updateListviewUI();
+
+
+                        //if (oper.NameOfOperation == "Replace")
+                        //{
+                        //    var _tmpArgs = oper.Arguments as ReplaceArguments;
+                        //    datum.newName = oper.Operate();
+                        //}
+                        //else
+                        //    if (oper.NameOfOperation == "Move ISBN")
+                        //    {
+                        //        var _tmpArgs = oper.Arguments as MoveCharactersArguments;
+                        //        datum.newName = oper.Operate();
+                        //    }
+                        //    else
+                        //        if (oper.NameOfOperation == "Normalize")
+                        //        {
+                        //            var _tmpArgs = oper.Arguments as NormalizeArguments;
+                        //            datum.newName = oper.Operate();
+                        //        }    
+                        //        else
+                        //            if (oper.NameOfOperation == "GUID Generate")
+                        //            {
+                        //                var _tmpArgs = oper.Arguments as GUIDGenerateArguments;
+                        //                datum.newName = oper.Operate();
+                        //            }
+                        //            else
+                        //                {
+                        //                    var _tmpArgs = oper.Arguments as NewCaseArguments;
+                        //                    datum.newName = oper.Operate();
+                        //                }
+                    }
+
+                    firstTimeRun = false;
+
+                    checkErr();
+                }
+            }
+        }
+
+        private void refreshListboxUI()
+        {
+            foreach (var tmp in readyLoadOper)
+                tmp.refreshChanged();
+        }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button buttonClose && buttonClose.Tag is ListBoxItem lsBoxItem)
+            {
+                var operToRemove = lsBoxItem.Content as StringOperations;
+                readyLoadOper.Remove(operToRemove);
+            }
+        }
+
+        private void FileExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            if (MessageBox.Show(this, "Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void HelpAbout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(this, "Nguyễn Khánh Hoàng - 1712457\n      Trần Trung Thọ      - 1712798", "About Us");
+        }
+
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            previewOperations();
+        }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+
         //operate operations to data
         private void previewOperations()
         {

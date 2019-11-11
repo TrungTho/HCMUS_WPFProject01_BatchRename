@@ -31,7 +31,10 @@ D:\1712457\lt_windows\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\P
 D:\1712457\lt_windows\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\NewCaseOptions.g.cs
 D:\1712457\lt_windows\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\NewCaseOptions.baml
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\InputFileNameDialog.g.cs
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\MainWindow.g.cs
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\NewCaseOptions.g.cs
@@ -59,4 +62,7 @@ C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\Project01_BatchRename.exe
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\Project01_BatchRename.pdb
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Debug\Project01_BatchRename.csprojAssemblyReference.cache
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
