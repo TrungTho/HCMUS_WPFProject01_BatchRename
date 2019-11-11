@@ -1,0 +1,15 @@
+﻿<Window x:Class="Project01_BatchRename.InputFileNameDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project01_BatchRename"
+        mc:Ignorable="d"
+        Title="InputFileNameDialog" Height="300" Width="300">
+    <Canvas>
+        <Label Content="Please input filename to save:" Canvas.Left="66" Canvas.Top="83"/>
+        <TextBox Name="textboxFilenameInput" Width="166" Height="25" Canvas.Left="66" Canvas.Top="114"/>
+        <Button Name="okButton" IsDefault="True" Content="OK" Width="80" Height="25" Click="OkButton_Click" Canvas.Left="66" Canvas.Top="155"/>
+        <Button Name="cacelButton" IsCancel="True" Content="Cancel" Width="80" Height="25" Canvas.Left="152" Canvas.Top="155"/>
+    </Canvas>
+</Window>

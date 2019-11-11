@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/f2_key.png")]
+=======
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/refreshicon.png")]
+>>>>>>> almost-finish2
 
 

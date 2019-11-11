@@ -30,12 +30,21 @@ namespace Project01_BatchRename
         //POCO
         class FileName : INotifyPropertyChanged
         {
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+            public string name { get; set; }
+=======
+>>>>>>> almost-finish2
             public int id { get; set; }
             public string oldName { get; set; }
             public string filePath { get; set; }
             public string newName { get; set; }
             public string err { get; set; }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> almost-finish2
 
             public event PropertyChangedEventHandler PropertyChanged;
             public void updateListviewUI()
@@ -43,8 +52,15 @@ namespace Project01_BatchRename
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("newName"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("err"));
             }
+<<<<<<< HEAD
 =======
 >>>>>>> almost-finish
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
         }
 
         BindingList<FileName> _fileNames = new BindingList<FileName>(); //list of file loaded to listview
@@ -64,6 +80,7 @@ namespace Project01_BatchRename
                 }
             };
 
+<<<<<<< HEAD
 =======
         //operate operations to data
         private void previewOperations()
@@ -75,27 +92,59 @@ namespace Project01_BatchRename
                     
                 }
             }
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        class FileNameDao
+        {
+            //get data from database here (...)
+=======
+        class FileNameBUS
+        {
+
+>>>>>>> Stashed changes
+=======
+        class FileNameBUS
+        {
+
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
         }
 
         List<StringOperation> _prototypes = new List<StringOperation>(); //list of operations can perform
         BindingList<StringOperation> readyLoadOper = new BindingList<StringOperation>(); //list of operation that was chosen
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+            //modify data here
+=======
+>>>>>>> almost-finish2
             //load operations to prototype to show in combobox
             var prototype1 = new Replace()
             {
                 Arguments = new ReplaceArguments()
                 {
+<<<<<<< HEAD
                     oldPattern = "",
                     newPattern = ""
                 }
             };
 
 >>>>>>> almost-finish
+=======
+                    oldPattern = "old",
+                    newPattern = "new"
+                }
+            };
+
+>>>>>>> almost-finish2
             var prototype2 = new NewCase()
             {
                 Arguments = new NewCaseArguments()
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
                     isUpper = 1,
                     isLower = 0,
@@ -103,6 +152,11 @@ namespace Project01_BatchRename
 =======
                     typeOfNewCase = 1
 >>>>>>> almost-finish
+=======
+                    isUpper = 1,
+                    isLower = 0,
+                    isSentence=0
+>>>>>>> almost-finish2
                 }
             };
 
@@ -117,11 +171,16 @@ namespace Project01_BatchRename
                 {
                     numbersOfChar = 13,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     isToFirst = 0,
                     isToLast=1
 =======
                     typeOfMove = 1
 >>>>>>> almost-finish
+=======
+                    isToFirst = 0,
+                    isToLast=1
+>>>>>>> almost-finish2
                 }
             };
 
@@ -138,12 +197,22 @@ namespace Project01_BatchRename
 
             comboBoxToChooseOperations.ItemsSource = _prototypes;
 <<<<<<< HEAD
+<<<<<<< HEAD
             comboBoxToChooseOperations.SelectedIndex= 0;
 
 =======
             comboBoxToChooseOperations.SelectedIndex = 2;
 >>>>>>> almost-finish
             listBoxOperations.ItemsSource = readyLoadOper;
+=======
+            comboBoxToChooseOperations.SelectedIndex= 0;
+
+            listBoxOperations.ItemsSource = readyLoadOper;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
         }
 
         public MainWindow()
@@ -154,10 +223,17 @@ namespace Project01_BatchRename
         private void addOperation_Click(object sender, RoutedEventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+            desFileName.Text = Guid.NewGuid().ToString();
+=======
+>>>>>>> almost-finish2
             StringOperations newOper = comboBoxToChooseOperations.SelectedItem as StringOperations;
             if (newOper != null)
             {
                 readyLoadOper.Add(newOper.Clone());
+<<<<<<< HEAD
                 refreshUI();
                 previewOperations();
             }
@@ -166,10 +242,20 @@ namespace Project01_BatchRename
             if (newOper != null)
                 readyLoadOper.Add(newOper.Clone());
 >>>>>>> almost-finish
+=======
+                refreshListboxUI();
+                previewOperations();
+            }
+>>>>>>> almost-finish2
             else
                 MessageBox.Show("Please choose Operation to add!");
             listBoxOperations.SelectedIndex = listBoxOperations.Items.Count - 1;
             listBoxOperations.ScrollIntoView(listBoxOperations.SelectedItem);
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
         }
 
         private void downButton(object sender, RoutedEventArgs e)
@@ -270,6 +356,7 @@ namespace Project01_BatchRename
                     }
                 }
             }
+<<<<<<< HEAD
 
             MessageBox.Show($"{readyLoadOper.Count} operations was saved!");
         }
@@ -279,6 +366,231 @@ namespace Project01_BatchRename
         {
             try
             {
+=======
+            else
+<<<<<<< Updated upstream
+            {
+                recaseMode = 0;
+=======
+                if (readyLoadOper.Count == 0)
+                    MessageBox.Show("Nothing to move!!!");
+                else
+                    MessageBox.Show("Ouch!!! Can't move up anymore!");
+=======
+>>>>>>> Stashed changes
+        }
+
+        private void superdownButton(object sender, RoutedEventArgs e)
+        {
+            if (listBoxOperations.SelectedIndex > 0)
+            {
+                var _tmp = listBoxOperations.SelectedItem as StringOperations;
+                int index = listBoxOperations.SelectedIndex;
+                readyLoadOper.RemoveAt(index);
+                readyLoadOper.Insert(readyLoadOper.Count-1,_tmp);
+                listBoxOperations.SelectedIndex = readyLoadOper.Count-1;
+            }
+            else
+                if (readyLoadOper.Count == 0)
+                MessageBox.Show("Nothing to move!!!");
+            else
+                MessageBox.Show("Ouch!!! Can't move down anymore!");
+        }
+
+        private void superupButton(object sender, RoutedEventArgs e)
+        {
+            if (listBoxOperations.SelectedIndex > 0)
+            {
+                var _tmp = listBoxOperations.SelectedItem as StringOperations;
+                int index = listBoxOperations.SelectedIndex;
+                readyLoadOper.RemoveAt(index);
+                readyLoadOper.Insert(0, _tmp);
+                listBoxOperations.SelectedIndex = 0;
+            }
+            else
+                if (readyLoadOper.Count == 0)
+                    MessageBox.Show("Nothing to move!!!");
+                else
+                    MessageBox.Show("Ouch!!! Can't move up anymore!");
+        }
+
+<<<<<<< Updated upstream
+=======
+        private void superdownButton(object sender, RoutedEventArgs e)
+        {
+            if (listBoxOperations.SelectedIndex > 0)
+            {
+                var _tmp = listBoxOperations.SelectedItem as StringOperations;
+                int index = listBoxOperations.SelectedIndex;
+                readyLoadOper.RemoveAt(index);
+                readyLoadOper.Insert(readyLoadOper.Count-1,_tmp);
+                listBoxOperations.SelectedIndex = readyLoadOper.Count-1;
+            }
+            else
+                if (readyLoadOper.Count == 0)
+                MessageBox.Show("Nothing to move!!!");
+            else
+                MessageBox.Show("Ouch!!! Can't move down anymore!");
+        }
+
+        private void superupButton(object sender, RoutedEventArgs e)
+        {
+            if (listBoxOperations.SelectedIndex > 0)
+            {
+                var _tmp = listBoxOperations.SelectedItem as StringOperations;
+                int index = listBoxOperations.SelectedIndex;
+                readyLoadOper.RemoveAt(index);
+                readyLoadOper.Insert(0, _tmp);
+                listBoxOperations.SelectedIndex = 0;
+            }
+            else
+                if (readyLoadOper.Count == 0)
+                    MessageBox.Show("Nothing to move!!!");
+                else
+                    MessageBox.Show("Ouch!!! Can't move up anymore!");
+        }
+
+>>>>>>> Stashed changes
+        private Tuple<string, string> parseName(string filename)
+        {
+            string tmp = filename;
+
+            string shortName= tmp.Substring(0, tmp.LastIndexOf("."));
+            string extensionName = tmp.Substring(tmp.LastIndexOf(".")+1);
+
+            if (tmp == "")
+                return Tuple.Create("", "");
+            else
+                return Tuple.Create( shortName, extensionName);
+        }
+
+        private void checkErr()
+        {
+            for (int i = 0; i < _fileNames.Count; i++)
+            {
+                int countErr = 1;
+                for (int j = i + 1; j < _fileNames.Count; j++)
+                    if ((_fileNames[i].newName == _fileNames[j].newName)&&(_fileNames[i].newName!=""))
+                    {
+                        _fileNames[j].err = $"Duplicate with No. {i}";
+                        var parsedName = parseName(_fileNames[j].newName);
+
+                        _fileNames[j].newName = parsedName.Item1 + countErr.ToString() + "." + parsedName.Item2;
+                        countErr++;
+
+                        _fileNames[j].updateListviewUI();
+                    }
+            }
+
+            
+        }
+
+        //main click to start program
+        //start to apply all change to all files/folders in listview
+        private void fireStartBatchEvent(object sender, RoutedEventArgs e)
+        {
+            foreach (var file in _fileNames)
+            {
+                file.oldName = file.newName;
+            }
+
+        }
+
+        /*combo preset button**/
+        //save preset to an simple txt file
+        private void savePresetButton(object sender, RoutedEventArgs e)
+        {
+            string _tmpInputFilename="preset.txt";
+
+            var screen = new InputFileNameDialog(_tmpInputFilename);
+            if (screen.ShowDialog()==true)
+            {
+                _tmpInputFilename = screen._filename;
+            }
+<<<<<<< Updated upstream
+
+            using (StreamWriter sw = new StreamWriter(_tmpInputFilename))
+            {
+
+                foreach (StringOperations oper in readyLoadOper)
+                {
+                    if (oper.NameOfOperation == "Replace")
+                    {
+                        var _tmpArgs = oper.Arguments as ReplaceArguments;
+                        sw.WriteLine($"Replace {_tmpArgs.oldPattern} {_tmpArgs.newPattern}");
+                    }
+                    else
+                        if (oper.NameOfOperation == "Move ISBN")
+                    {
+                        var _tmpArgs = oper.Arguments as MoveCharactersArguments;
+                        sw.WriteLine($"Move {_tmpArgs.numbersOfChar} {_tmpArgs.isToLast} {_tmpArgs.isToFirst}");
+                    }
+                    else
+                            if (oper.NameOfOperation == "Normalize")
+                    {
+                        var _tmpArgs = oper.Arguments as NormalizeArguments;
+                        sw.WriteLine($"Normalize");
+                    }
+                    else
+                                if (oper.NameOfOperation == "GUID Generate")
+                    {
+                        var _tmpArgs = oper.Arguments as GUIDGenerateArguments;
+                        sw.WriteLine($"GUID");
+                    }
+                    else
+                    {
+                        var _tmpArgs = oper.Arguments as NewCaseArguments;
+                        sw.WriteLine($"NewCase {_tmpArgs.isUpper} {_tmpArgs.isLower} {_tmpArgs.isSentence}");
+
+=======
+
+            using (StreamWriter sw = new StreamWriter(_tmpInputFilename))
+            {
+
+                foreach (StringOperations oper in readyLoadOper)
+                {
+                    if (oper.NameOfOperation == "Replace")
+                    {
+                        var _tmpArgs = oper.Arguments as ReplaceArguments;
+                        sw.WriteLine($"Replace {_tmpArgs.oldPattern} {_tmpArgs.newPattern}");
+                    }
+                    else
+                        if (oper.NameOfOperation == "Move ISBN")
+                    {
+                        var _tmpArgs = oper.Arguments as MoveCharactersArguments;
+                        sw.WriteLine($"Move {_tmpArgs.numbersOfChar} {_tmpArgs.isToLast} {_tmpArgs.isToFirst}");
+                    }
+                    else
+                            if (oper.NameOfOperation == "Normalize")
+                    {
+                        var _tmpArgs = oper.Arguments as NormalizeArguments;
+                        sw.WriteLine($"Normalize");
+                    }
+                    else
+                                if (oper.NameOfOperation == "GUID Generate")
+                    {
+                        var _tmpArgs = oper.Arguments as GUIDGenerateArguments;
+                        sw.WriteLine($"GUID");
+                    }
+                    else
+                    {
+                        var _tmpArgs = oper.Arguments as NewCaseArguments;
+                        sw.WriteLine($"NewCase {_tmpArgs.isUpper} {_tmpArgs.isLower} {_tmpArgs.isSentence}");
+
+>>>>>>> Stashed changes
+                    }
+                }
+            }
+
+            MessageBox.Show($"{readyLoadOper.Count} operations was saved!");
+        }
+
+        //load preset(template of a chain of operations) in a simple txt file
+        private void loadPresetButton(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+>>>>>>> almost-finish2
                 using (StreamReader sr = new StreamReader("textfile.txt"))
                 {
                     string line;
@@ -287,10 +599,33 @@ namespace Project01_BatchRename
                     {
                         Console.WriteLine(line);
                     }
+<<<<<<< HEAD
 
                 }
 
                 Console.ReadKey();
+=======
+<<<<<<< Updated upstream
+
+                }
+
+=======
+
+                }
+
+>>>>>>> Stashed changes
+                Console.ReadKey();
+            }
+            catch (Exception error)
+            {
+                // thong bao loi.
+                MessageBox.Show("Khong the doc du lieu tu file da cho: ");
+                MessageBox.Show(error.Message);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
             }
             catch (Exception error)
             {
@@ -310,7 +645,20 @@ namespace Project01_BatchRename
         //load preset(template of a chain of operations) in a simple txt file
         private void loadPresetButton(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+<<<<<<< Updated upstream
+            recaseMode = caseMode;
+=======
+            while (readyLoadOper.Count != 0)
+                readyLoadOper.RemoveAt(0);
+            MessageBox.Show("Removed All Operations from ListBox.", "Alert");
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
         }
 
         private void clearAllOperationsButton(object sender, RoutedEventArgs e)
@@ -320,6 +668,7 @@ namespace Project01_BatchRename
             MessageBox.Show("Removed All Operations from ListBox.", "Alert");
         }
 
+<<<<<<< HEAD
         private void resetAllList()
         {
             while (_fileNames.Count != 0)//reset listview and list of data
@@ -329,11 +678,25 @@ namespace Project01_BatchRename
         }
 
         //private string getShortName(string path, string fullname)
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        //private void MoveFileNameButton_Click(object sender, RoutedEventArgs e)
+>>>>>>> almost-finish2
         //{
         //    return fullname.Substring(fullname.LastIndexOf(@"\") + 1);
         //}
 
+<<<<<<< HEAD
         private void loadFilesButton(object sender, RoutedEventArgs e)
+=======
+        private void MoveFileNameButton_Click(object sender, RoutedEventArgs e)
+=======
+=======
+>>>>>>> Stashed changes
+        private void loadFilesButton(object sender, RoutedEventArgs e)
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
         {
             resetAllList();
 
@@ -556,9 +919,222 @@ namespace Project01_BatchRename
                 tmp.refreshChange();
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+        //operate operations to data
+        private void previewOperations()
+        {
+            if (readyLoadOper.Count == 0)
+            {
+                foreach (var file in _fileNames)
+                {
+                    file.newName = file.oldName;
+                    file.updateListviewUI();
+                }
+            }
+            else
+            {
+                bool firstTimeRun = true;
+
+                foreach (var oper in readyLoadOper)
+                {
+                    foreach (var datum in _fileNames)
+                    {
+                        if (firstTimeRun)
+                            oper.Arguments.Origin = datum.oldName;
+                        else
+                            oper.Arguments.Origin = datum.newName;
+
+                        datum.newName = oper.Operate();
+                        datum.updateListviewUI();
+
+
+                        //if (oper.NameOfOperation == "Replace")
+                        //{
+                        //    var _tmpArgs = oper.Arguments as ReplaceArguments;
+                        //    datum.newName = oper.Operate();
+                        //}
+                        //else
+                        //    if (oper.NameOfOperation == "Move ISBN")
+                        //    {
+                        //        var _tmpArgs = oper.Arguments as MoveCharactersArguments;
+                        //        datum.newName = oper.Operate();
+                        //    }
+                        //    else
+                        //        if (oper.NameOfOperation == "Normalize")
+                        //        {
+                        //            var _tmpArgs = oper.Arguments as NormalizeArguments;
+                        //            datum.newName = oper.Operate();
+                        //        }    
+                        //        else
+                        //            if (oper.NameOfOperation == "GUID Generate")
+                        //            {
+                        //                var _tmpArgs = oper.Arguments as GUIDGenerateArguments;
+                        //                datum.newName = oper.Operate();
+                        //            }
+                        //            else
+                        //                {
+                        //                    var _tmpArgs = oper.Arguments as NewCaseArguments;
+                        //                    datum.newName = oper.Operate();
+                        //                }
+                    }
+
+                    firstTimeRun = false;
+
+                    checkErr();
+                }
+            }
+        }
+
+        private void refreshListboxUI()
+        {
+            foreach (var tmp in readyLoadOper)
+                tmp.refreshChanged();
+        }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button buttonClose && buttonClose.Tag is ListBoxItem lsBoxItem)
+            {
+                var operToRemove = lsBoxItem.Content as StringOperations;
+                readyLoadOper.Remove(operToRemove);
+            }
+        }
+
+        private void FileExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            if (MessageBox.Show(this, "Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
         private void HelpAbout_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(this, "Nguyễn Khánh Hoàng - 1712457\n      Trần Trung Thọ      - 1712798", "About Us");
         }
+
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            previewOperations();
+        }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+
+        //operate operations to data
+        private void previewOperations()
+        {
+            if (readyLoadOper.Count == 0)
+            {
+                foreach (var file in _fileNames)
+                {
+                    file.newName = file.oldName;
+                    file.updateListviewUI();
+                }
+            }
+            else
+            {
+                bool firstTimeRun = true;
+
+                foreach (var oper in readyLoadOper)
+                {
+                    foreach (var datum in _fileNames)
+                    {
+                        if (firstTimeRun)
+                            oper.Arguments.Origin = datum.oldName;
+                        else
+                            oper.Arguments.Origin = datum.newName;
+
+                        datum.newName = oper.Operate();
+                        datum.updateListviewUI();
+
+
+                        //if (oper.NameOfOperation == "Replace")
+                        //{
+                        //    var _tmpArgs = oper.Arguments as ReplaceArguments;
+                        //    datum.newName = oper.Operate();
+                        //}
+                        //else
+                        //    if (oper.NameOfOperation == "Move ISBN")
+                        //    {
+                        //        var _tmpArgs = oper.Arguments as MoveCharactersArguments;
+                        //        datum.newName = oper.Operate();
+                        //    }
+                        //    else
+                        //        if (oper.NameOfOperation == "Normalize")
+                        //        {
+                        //            var _tmpArgs = oper.Arguments as NormalizeArguments;
+                        //            datum.newName = oper.Operate();
+                        //        }    
+                        //        else
+                        //            if (oper.NameOfOperation == "GUID Generate")
+                        //            {
+                        //                var _tmpArgs = oper.Arguments as GUIDGenerateArguments;
+                        //                datum.newName = oper.Operate();
+                        //            }
+                        //            else
+                        //                {
+                        //                    var _tmpArgs = oper.Arguments as NewCaseArguments;
+                        //                    datum.newName = oper.Operate();
+                        //                }
+                    }
+
+                    firstTimeRun = false;
+
+                    checkErr();
+                }
+            }
+        }
+
+        private void refreshListboxUI()
+        {
+            foreach (var tmp in readyLoadOper)
+                tmp.refreshChanged();
+        }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button buttonClose && buttonClose.Tag is ListBoxItem lsBoxItem)
+            {
+                var operToRemove = lsBoxItem.Content as StringOperations;
+                readyLoadOper.Remove(operToRemove);
+            }
+        }
+
+        private void FileExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            if (MessageBox.Show(this, "Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
+>>>>>>> almost-finish2
+        private void HelpAbout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(this, "Nguyễn Khánh Hoàng - 1712457\n      Trần Trung Thọ      - 1712798", "About Us");
+        }
+<<<<<<< HEAD
+=======
+
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            previewOperations();
+        }
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
     }
 }

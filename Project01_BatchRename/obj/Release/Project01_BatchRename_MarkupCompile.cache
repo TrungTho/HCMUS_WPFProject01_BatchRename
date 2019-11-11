@@ -10,11 +10,19 @@ none
 false
 TRACE
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\App.xaml
+<<<<<<< HEAD
 2-1505210322
 
 9-1781155096
 131569487696
 MainWindow.xaml;NewCaseOptions.xaml;
+=======
+31797342629
+
+10-1829381878
+161838115590
+InputFileNameDialog.xaml;MainWindow.xaml;NewCaseOptions.xaml;
+>>>>>>> almost-finish2
 
 False
 

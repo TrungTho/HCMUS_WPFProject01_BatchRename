@@ -37,6 +37,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
 <<<<<<< HEAD
@@ -55,6 +56,23 @@
       <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
 >>>>>>> almost-finish
     </Reference>
+=======
+<<<<<<< Updated upstream
+=======
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged, Version=2.2.10.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
+      <HintPath>..\packages\PropertyChanged.Fody.2.2.10\lib\net452\PropertyChanged.dll</HintPath>
+    </Reference>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -82,15 +100,29 @@
     <Compile Include="NewCaseOptions.xaml.cs">
       <DependentUpon>NewCaseOptions.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="OperationDataTemplates.cs" />
     <Compile Include="StringOperations.cs" />
 <<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+    <Compile Include="OperationDataTemplates.cs" />
+    <Compile Include="StringOperations.cs" />
+>>>>>>> almost-finish2
     <Page Include="InputFileNameDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
 =======
 >>>>>>> almost-finish
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -135,10 +167,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
 <<<<<<< HEAD
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> almost-finish2
   <ItemGroup>
     <Resource Include="Images\closebutton.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -149,9 +186,12 @@
     <Resource Include="Images\f2_key.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+<<<<<<< HEAD
     <Resource Include="Images\refreshicon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+=======
+>>>>>>> almost-finish2
     <Resource Include="Images\superdown.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -159,15 +199,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\up.png">
+<<<<<<< HEAD
 =======
     <Resource Include="Images\down.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\up.png">
+=======
+>>>>>>> almost-finish2
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Resource Include="Images\closebutton.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -178,6 +222,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+=======
+    <Resource Include="Images\refreshicon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+>>>>>>> Stashed changes
+>>>>>>> almost-finish2
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.2.5.0\build\Fody.targets" Condition="Exists('..\packages\Fody.2.5.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -185,7 +236,11 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Fody.2.5.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.5.0\build\Fody.targets'))" />
+<<<<<<< HEAD
     <Error Condition="!Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets'))" />
   </Target>
   <Import Project="..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" />
+=======
+  </Target>
+>>>>>>> almost-finish2
 </Project>

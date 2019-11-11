@@ -16,3 +16,16 @@ C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Release\Project01_BatchRename.exe
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Release\Project01_BatchRename.pdb
 C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Release\Project01_BatchRename.csprojAssemblyReference.cache
+<<<<<<< HEAD
+=======
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\bin\Release\Images\closebutton.jpg
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\bin\Release\PropertyChanged.dll
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\bin\Release\Microsoft.WindowsAPICodePack.xml
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\bin\Release\PropertyChanged.xml
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Release\Project01_BatchRename.csproj.CopyComplete
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Release\InputFileNameDialog.g.cs
+C:\Users\TTTPC\OneDrive - VNU-HCMUS\HCMUS\3_Junior\Semester1\Windows\4. Projects\Project01\Project01_BatchRename\WPFProject01_BatchRename\Project01_BatchRename\obj\Release\InputFileNameDialog.baml
+>>>>>>> almost-finish2
