@@ -5,18 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project01_BatchRename"
         mc:Ignorable="d"
+<<<<<<< HEAD
 		Title="Mini Project 01 - Batch Rename" Height="600" Width="1008" Loaded="Window_Loaded" Closing="Window_Closing" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" Icon="Images/f2_key.png">
+=======
+        Title="Mini Project 01 - Batch Rename" Height="600" Width="1008" Loaded="Window_Loaded" Closing="Window_Closing" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" Icon="Images/f2_key.png">
+>>>>>>> almost-finish
     <Window.Resources>
         <DataTemplate x:Key="GUIDTemplate">
             <Border BorderBrush="#FF007ACC" BorderThickness="1">
                 <Canvas Height="44" Width="284">
+<<<<<<< HEAD
                     <Label Content="{Binding NameOfOperation}" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+=======
+                    <Label Content="GUID" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+>>>>>>> almost-finish
                        Height="auto" Width="auto" FontWeight="Bold"
                        TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10"  Canvas.Top="1"/>
                     <Button Tag="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Mode=OneWay}"
                         Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0" Click="ButtonClose_Click">
+<<<<<<< HEAD
                         <Image Source="Images/closebutton.jpg"  Width="14" Height="14"/>
 					</Button>
+=======
+                        <Image Source="Images/closebutton.jpg"  Width="14" Height="14">
+                        </Image>
+                    </Button>
+>>>>>>> almost-finish
                     <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Set the filename to a newly initialized GUID string." Canvas.Top="24"/>
                 </Canvas>
             </Border>
@@ -25,12 +39,21 @@
         <DataTemplate x:Key="MoveTemplate">
             <Border BorderBrush="#FF007ACC" BorderThickness="1">
                 <Canvas Height="66" Canvas.Left="227.2" Canvas.Top="350.6" Width="284">
+<<<<<<< HEAD
                     <Label Content="{Binding NameOfOperation}" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
                         Height="auto" Width="auto" FontWeight="Bold" TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10"  Canvas.Top="1"/>
                     <TextBlock Text="Number of characters" Canvas.Top="24" Canvas.Left="10"/>
                     <TextBox x:Name="txtBoxMoveNumChars" Text="{Binding Arguments.numbersOfChar}" TextChanged="refreshUI" Width="68" Background="White" Canvas.Left="130" Canvas.Top="24" Height="16" Padding="0,-1,0,0"/>
                     <RadioButton x:Name="moveRadioToFront" IsChecked="{Binding Arguments.isToFirst}" Content="To Front" Canvas.Left="209.333" Canvas.Top="25.04" ToolTip="Move characters at last to front"/>
                     <RadioButton x:Name="moveRadioToLast" IsChecked="{Binding Arguments.isToLast}" Content="To Last" Canvas.Left="209.333" Canvas.Top="47.04" ToolTip="Move characters at front to last"/>
+=======
+                    <Label Content="Move" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+                        Height="auto" Width="auto" FontWeight="Bold" TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10"  Canvas.Top="1"/>
+                    <TextBlock Text="Number of characters" Canvas.Top="24" Canvas.Left="10"/>
+                    <TextBox x:Name="txtBoxMoveNumChars" TextWrapping="NoWrap" Width="68" Background="White" Canvas.Left="130" Canvas.Top="24" Height="16" Padding="0,-1,0,0"/>
+                    <RadioButton x:Name="moveRadioToFront" Content="To Front" Canvas.Left="209.333" Canvas.Top="25.04" GroupName="MoveOptions" ToolTip="Move characters at last to front"/>
+                    <RadioButton x:Name="moveRadioToLast" Content="To Last" Canvas.Left="209.333" Canvas.Top="47.04" GroupName="MoveOptions" ToolTip="Move characters at front to last"/>
+>>>>>>> almost-finish
                     <CheckBox x:Name="moveISBNCheckBox" Content="ISBN style" Canvas.Left="10" Canvas.Top="47.04" Height="15"
                               ToolTip="Characters to move must include the space between ISBN and book's name"/>
                     <Button Tag="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Mode=OneWay}"
@@ -45,16 +68,26 @@
         <DataTemplate x:Key="NewCaseTemplate">
             <Border BorderBrush="#FF007ACC" BorderThickness="1">
                 <Canvas Height="64" Width="284">
+<<<<<<< HEAD
                     <Label Content="{Binding NameOfOperation}" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+=======
+                    <Label Content="New Case" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+>>>>>>> almost-finish
                        Height="auto" Width="auto" FontWeight="Bold"
                        TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10" Canvas.Top="1"/>
                     <Button Tag="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Mode=OneWay}"
                         Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0" Click="ButtonClose_Click">
                         <Image Source="Images/closebutton.jpg"  Width="14" Height="14"></Image>
                     </Button>
+<<<<<<< HEAD
                     <RadioButton x:Name="radioUpperCase" Content="UPPERCASE" IsChecked="{Binding Arguments.isUpper}" Canvas.Left="27" Canvas.Top="23"/>
                     <RadioButton x:Name="radioLowerCase" Content="lowercase" IsChecked="{Binding Arguments.isLower}" Canvas.Left="154" Canvas.Top="23" />
                     <RadioButton x:Name="radioSentenceCase" Content="Sentence case" IsChecked="{Binding Arguments.isSentence}" Canvas.Left="27" Canvas.Top="45" />
+=======
+                    <RadioButton x:Name="radioUpperCase" Content="UPPERCASE" Canvas.Left="27" Canvas.Top="23"/>
+                    <RadioButton x:Name="radioLowerCase" Content="lowercase" Canvas.Left="154" Canvas.Top="23" />
+                    <RadioButton x:Name="radioSentenceCase" Content="Sentence case" Canvas.Left="27" Canvas.Top="45" />
+>>>>>>> almost-finish
                 </Canvas>
             </Border>
         </DataTemplate>
@@ -62,12 +95,20 @@
         <DataTemplate x:Key="NormalizeTemplate">
             <Border BorderBrush="#FF007ACC" BorderThickness="1">
                 <Canvas Height="44" Width="284">
+<<<<<<< HEAD
                     <Label Content="{Binding NameOfOperation}" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
                        Height="auto" Width="auto" FontWeight="Bold"
                        TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10"  Canvas.Top="1"/>
 
                     <Button Tag="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Mode=OneWay}"
 						Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0" Click="ButtonClose_Click">
+=======
+                    <Label Content="Normalize" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+                       Height="auto" Width="auto" FontWeight="Bold"
+                       TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10"  Canvas.Top="1"/>
+                    <Button Tag="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Mode=OneWay}"
+                        Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0" Click="ButtonClose_Click">
+>>>>>>> almost-finish
                         <Image Source="Images/closebutton.jpg"  Width="14" Height="14">
                         </Image>
                     </Button>
@@ -77,6 +118,7 @@
                 </Canvas>
             </Border>
         </DataTemplate>
+<<<<<<< HEAD
 
         <DataTemplate x:Key="ReplaceTemplate">
             <Border BorderBrush="#FF007ACC" BorderThickness="1">
@@ -124,12 +166,62 @@
                     
                     <ComboBox Name="comboBoxToChooseOperations" Text="Operation"
                               Width="90" Height="25" Margin="5 0 0 0">
+=======
+
+        <DataTemplate x:Key="ReplaceTemplate">
+            <Border BorderBrush="#FF007ACC" BorderThickness="1">
+                <Canvas Height="70" Width="284">
+                    <Label Content="Replace" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"
+                       Height="auto" Width="auto" FontWeight="Bold"
+                       TextOptions.TextFormattingMode="Ideal" Foreground="Red" FontSize="14" Canvas.Left="10" Canvas.Top="1"/>
+                    <TextBlock Text="oldPattern" Canvas.Left="18" Canvas.Top="25" RenderTransformOrigin="0.472,0.647"></TextBlock>
+                    <TextBox TextWrapping="NoWrap" Width="185" Background="White" Canvas.Left="89" Canvas.Top="23"/>
+                    <TextBlock Text="newPattern" Canvas.Left="18" Canvas.Top="48"></TextBlock>
+                    <TextBox TextWrapping="NoWrap" Width="185" Background="White" Canvas.Left="89" Canvas.Top="46"/>
+                    <Button Tag="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Mode=OneWay}"
+                        Canvas.Left="262" Canvas.Top="3" BorderBrush="{x:Null}" Background="#FFABADB3" BorderThickness="0" Click="ButtonClose_Click">
+                        <Image Source="Images/closebutton.jpg"  Width="14" Height="14"></Image>
+                    </Button>
+                </Canvas>
+            </Border>
+        </DataTemplate>
+
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+
+    </Window.Resources>
+
+
+    <StackPanel Height="567" Background="Violet" VerticalAlignment="Top" Margin="0">
+        <Border BorderBrush="#FFACACAC" BorderThickness="0,0,0,1">
+        <DockPanel Height="20" Background="#FFDDDDDD">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File" >
+                    <MenuItem Header="_Exit" Click="FileExit_Click" />
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="_About..." Click="HelpAbout_Click" />
+                </MenuItem>
+            </Menu>
+            
+        </DockPanel>
+        </Border>
+
+        <StackPanel Height="548" Background="AliceBlue" Orientation="Horizontal">
+            <StackPanel Width="300" Background="AliceBlue" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+
+                    <ComboBox Name="comboBoxToChooseOperations" Text="Operation"
+                              Width="128" Height="25" Margin="5,0,0,0">
+>>>>>>> almost-finish
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding NameOfOperation}"/>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+<<<<<<< HEAD
                     
                     <Button Content="Add" Width="50" Height="25" 
                             Margin="5 0 0 0" Click="addOperation_Click"/>
@@ -145,13 +237,18 @@
                 </StackPanel>
 
                 <ListBox Name="listBoxOperations" ItemsSource="{Binding}" 
+<<<<<<< HEAD
                         Height="470" BorderThickness="1" 
                          ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
                          ScrollViewer.VerticalScrollBarVisibility="Hidden">
+=======
+                        Height="470" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderThickness="1" >
+>>>>>>> almost-finish
                     <ListBox.ItemTemplateSelector>
                         <local:OperationDataTemplates/>
                     </ListBox.ItemTemplateSelector>
                 </ListBox>
+<<<<<<< HEAD
                 <Canvas Height="25" Margin="0 5 0 0">
                     <Button Content="Clear All" Width="80" Height="25" 
                             HorizontalAlignment="Right" Click="clearAllOperationsButton" Canvas.Left="210" 
@@ -175,6 +272,29 @@
                     
                 </DockPanel>
                 <ListView Name="listviewOfFiles" Height="432">
+=======
+                <Canvas Height="25" Margin="0,6,0,0">
+                    <Button Content="Load Preset" Width="80" Height="25" 
+                            Canvas.Left="10" Click="loadPresetButton"/>
+                    <Button Content="Save Preset" Width="80" Height="25" 
+                            HorizontalAlignment="Left"  Canvas.Left="110" Click="savePresetButton" RenderTransformOrigin="0.5,0.5"/>
+                    <Button Content="Clear All" Width="80" Height="25" 
+                            HorizontalAlignment="Right" Click="clearAllOperationsButton" Canvas.Left="210" Foreground="Red" FontWeight="Bold" Background="#FFDDDDDD"/>
+                </Canvas>
+
+            </StackPanel>
+
+            <StackPanel Width="690">
+                <DockPanel Height="36" >
+                    <Button Content="Load Files" Width="80" Height="25" Margin="5,0,5,0" Click="loadFilesButton"/>
+                    <Button Content="Load Folders" Width="80" Height="25" Margin="5,0,5,0" Click="loadFoldersButton"/>
+                    <Button DockPanel.Dock="Right" Content="START BATCH" Width="110" Height="25" Margin="0,0,3,0"
+                            FontStretch="UltraExpanded" Foreground="Green" FontStyle="Oblique" FontWeight="Bold"
+                            VerticalContentAlignment="Center" Click="fireStartBatchEvent" BorderThickness="2" FontSize="14"/>
+                    <Border ></Border>
+                </DockPanel>
+                <ListView Name="listviewOfFiles" Margin="2,-1,0,0" Height="502" BorderThickness="2">
+>>>>>>> almost-finish
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="No." Width="25" DisplayMemberBinding="{Binding id}" />
@@ -185,11 +305,19 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
+<<<<<<< HEAD
                 <Button Content="Start Batch!!!" FontSize="50"
                         FontStretch="UltraExpanded" Foreground="Green" 
                         FontStyle="Oblique" FontWeight="Bold"
                         VerticalContentAlignment="Center"
                         Height="80" Click="fireStartBatchEvent"/>
+=======
+                <!--<Button Content="Start Batch!!!" FontSize="50"
+                        FontStretch="UltraExpanded" Foreground="Green" 
+                        FontStyle="Oblique" FontWeight="Bold"
+                        VerticalContentAlignment="Center"
+                        Height="80" Click="fireStartBatchEvent"/>-->
+>>>>>>> almost-finish
             </StackPanel>
 
         </StackPanel>
