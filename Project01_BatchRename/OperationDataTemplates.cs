@@ -12,7 +12,7 @@ namespace Project01_BatchRename
     {
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            StringOperation _tmp = item as StringOperation;
+            StringOperations _tmp = item as StringOperations;
             FrameworkElement element = container as FrameworkElement;
             if (_tmp != null && element != null)
             {
@@ -26,19 +26,19 @@ namespace Project01_BatchRename
                     return element.FindResource("GUIDTemplate") as DataTemplate;
                 }
                 else
-                        if (_tmp.NameOfOperation == "New Case")
-                {
-                    return element.FindResource("NewCaseTemplate") as DataTemplate;
-                }
-                else
-                            if (_tmp.NameOfOperation == "Normalize")
-                {
-                    return element.FindResource("NormalizeTemplate") as DataTemplate;
-                }
-                else
-                {
-                    return element.FindResource("MoveTemplate") as DataTemplate;
-                }
+                        if (_tmp.NameOfOperation == "NewCase")
+                    {
+                        return element.FindResource("NewCaseTemplate") as DataTemplate;
+                    }
+                    else
+                        if (_tmp.NameOfOperation == "Normalize")
+                    {
+                        return element.FindResource("NormalizeTemplate") as DataTemplate;
+                    }
+                    else
+                    {
+                        return element.FindResource("MoveTemplate") as DataTemplate;
+                    }
             }
             return null;
         }

@@ -19,22 +19,24 @@ namespace Project01_BatchRename
     /// </summary>
     public partial class InputFileNameDialog : Window
     {
-        public string _filename { get; set; }
+        public string filename { get; set; }
         public InputFileNameDialog(string tmp)
         {
             InitializeComponent();
 
-            _filename = tmp;
-            textboxFilenameInput.Text = tmp;
+            textboxToInput.Text = tmp;
         }
 
-        private void OkButton_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _filename = textboxFilenameInput.Text;
-            if (_filename.Contains(".txt")==false)
-                _filename += ".txt";
+            filename = textboxToInput.Text;
             DialogResult = true;
             Close();
+        }
+
+        private void cancelButton(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

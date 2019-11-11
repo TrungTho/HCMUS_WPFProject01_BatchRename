@@ -8,10 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-<<<<<<< HEAD
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/closebutton.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/down.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/f2_key.png")]
-=======
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/refreshicon.png")]
->>>>>>> almost-finish2
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/superdown.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/superup.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/up.png")]
 
 

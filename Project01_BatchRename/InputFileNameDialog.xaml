@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="InputFileNameDialog" Height="300" Width="300">
     <Canvas>
-        <Label Content="Please input filename to save:" Canvas.Left="66" Canvas.Top="83"/>
-        <TextBox Name="textboxFilenameInput" Width="166" Height="25" Canvas.Left="66" Canvas.Top="114"/>
-        <Button Name="okButton" IsDefault="True" Content="OK" Width="80" Height="25" Click="OkButton_Click" Canvas.Left="66" Canvas.Top="155"/>
-        <Button Name="cacelButton" IsCancel="True" Content="Cancel" Width="80" Height="25" Canvas.Left="152" Canvas.Top="155"/>
+        <Label Content="Please input filename to save:" Canvas.Left="69" Canvas.Top="68"/>
+        <TextBox Width="166" Height="25" Name="textboxToInput" Canvas.Left="69" Canvas.Top="99"/>
+        <Button Content="OK" IsDefault="True" Click="Button_Click" Width="80" Height="25" Canvas.Left="69" Canvas.Top="142"/>
+        <Button Content="Cancel" IsCancel="False" Click="cancelButton" Width="80" Height="25" RenderTransformOrigin="4.735,8.02" Canvas.Left="155" Canvas.Top="142"/>
     </Canvas>
 </Window>

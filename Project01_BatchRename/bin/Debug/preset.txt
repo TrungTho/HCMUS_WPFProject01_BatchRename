@@ -1,8 +1,0 @@
-Replace oldsualf newnguoiyeu
-NewCase 1 0 0
-NewCase 0 1 0
-NewCase 0 0 1
-Normalize
-Move 13 1 0
-Move 13 0 1
-GUID
